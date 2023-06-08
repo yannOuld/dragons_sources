@@ -16,7 +16,7 @@ function verifyToken(token) {
     return jwt.verify(token, SECRET_KEY);
 }
 
-function authenticate({ email, password }) {
+function authenticate({ email }) {
     if (dbUsers.users.find((user) => user.email === email))
         throw new Error("email already used !");
 }
