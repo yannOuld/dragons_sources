@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dragons</title>
+</head>
+
+<body>
+    <header class="header">
+        <p class="header__title">POPDRAGONS</p>
+        <div class="header_auth">
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" />
+            <label for="password">mot de passe</label>
+            <input type="text" id="password" name="password" />
+            <button class="header__btn">envoyer</button>
+        </div>
+    </header>
+    <nav class="navigation">
+        <div class="navigation__layout--search">
+            <div class="search">
+                <label for="searchbar" class="search__label">rechercher</label>
+                <input type="text" id="searchbar" name="searchbar" class="search__bar" />
+                <button class="search__btn"></button>
+            </div>
+            <div class="navigation__layout--filters">
+                <div class="filters">
+                    <p class="filters__label">filtres:</p>
+                    <div class="filters__layout">
+                        <span class="filters__checkbox">
+                            <label for="water">eau</label><input type="checkbox" id="water" name="water" />
+                        </span>
+                        <span class="filters__checkbox">
+                            <label for="fire">feu</label><input type="checkbox" id="fire" name="fire" />
+                        </span>
+                        <span class="filters__checkbox">
+                            <label for="earth">terre</label><input type="checkbox" id="earth" name="earth" />
+                        </span>
+                        <span class="filters__checkbox">
+                            <label for="air">air</label><input type="checkbox" id="air" name="air" />
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="container">
+            <ul id="cards">
+            </ul>
+            <div class="pagination">
+            </div>
+        </section>
+        <form action="submit" class="form">
+            <h2 class="form__title">Créer votre dragon</h2>
+            <div class="form__layout">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" />
+                <label for="element">Element</label>
+                <input type="text" id="element" name="element" />
+            </div>
+            <button class="form__btn">Envoyer</button>
+        </form>
+    </main>
+    <script src="./bundle.js"></script>
+</body>
+
+</html>
