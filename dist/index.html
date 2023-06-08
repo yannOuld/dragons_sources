@@ -4,29 +4,33 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <title>Dragons</title>
 </head>
 
 <body>
-    <header class="header">
+    <header class="header flex">
         <p class="header__title">POPDRAGONS</p>
         <div class="header_auth">
             <label for="email">email</label>
             <input type="email" id="email" name="email" />
             <label for="password">mot de passe</label>
             <input type="text" id="password" name="password" />
-            <button class="header__btn">envoyer</button>
+            <button class="header__btn">se connecter</button>
         </div>
+
     </header>
-    <nav class="navigation">
-        <div class="navigation__layout--search">
-            <div class="search">
+    <nav class="navigation flex flex-col">
+        <div class="navigation__layout--search ">
+            <div class="search ">
                 <label for="searchbar" class="search__label">rechercher</label>
-                <input type="text" id="searchbar" name="searchbar" class="search__bar" />
-                <button class="search__btn"></button>
+                <span class="search__bar--layout">
+                    <input type="text" id="searchbar" name="searchbar" class="search__bar" />
+                    <button class="search__btn"></button>
+                </span>
             </div>
-            <div class="navigation__layout--filters">
-                <div class="filters">
+            <div class="navigation__layout--filters  ">
+                <div class="filters flex">
                     <p class="filters__label">filtres:</p>
                     <div class="filters__layout">
                         <span class="filters__checkbox">
@@ -47,8 +51,8 @@
         </div>
     </nav>
 
-    <main id="main">
-        <section class="container">
+    <main id="main" class="container">
+        <section class="flex">
             <ul id="cards">
             </ul>
             <div class="pagination">
@@ -57,15 +61,25 @@
         <form action="submit" class="form">
             <h2 class="form__title">Créer votre dragon</h2>
             <div class="form__layout">
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="name" />
-                <label for="element">Element</label>
-                <input type="text" id="element" name="element" />
+
+                <div class="flex flex-col space-betwn">
+                    <span class="form__control flex space-betwn">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" />
+                    </span>
+
+                    <span class="form__control flex  space-betwn">
+                        <label for="element">Element</label>
+                        <input type="text" id="element" name="element" />
+                    </span>
+                </div>
+
+                <div class="form__layout--btn">
+                    <button class="form__btn">Envoyer</button>
+                </div>
             </div>
-            <button class="form__btn">Envoyer</button>
         </form>
     </main>
-    <script src="./bundle.js"></script>
 </body>
 
 </html>

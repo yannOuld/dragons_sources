@@ -38,7 +38,7 @@ server.post("/auth/sign", (req, res) => {
                 throw new Error(err.message);
             }
 
-            let data = JSON.parse(data.toString());
+            let userData = JSON.parse(userData.toString());
             let index = data.users[data.users.length - 1].id;
 
             //Add new user
