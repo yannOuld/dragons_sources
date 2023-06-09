@@ -6,6 +6,10 @@ body,
 .cards__content > li {
   margin: 0;
 }
+button,
+input[type="checkbox"] {
+  cursor: pointer;
+}
 header,
 .header__btn,
 .form__title,
