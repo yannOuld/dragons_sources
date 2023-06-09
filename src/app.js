@@ -1,8 +1,8 @@
-import { addDragons, average, createButton } from "./core/utils"; // export normal nommé
+import { addDragons, average, createButton } from "./core/utils";
 
-import * as Dragon from "./core/dragons"; // export default peut être renommé
+import * as Dragon from "./core/dragons";
 
-const main = document.getElementById("main");
+const main = document.getElementById("container");
 
 document.addEventListener("DOMContentLoaded", (event) => {
   let {

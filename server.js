@@ -2,6 +2,7 @@ const jsonServer = require("json-server");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const dbUsers = JSON.parse(fs.readFileSync("./users.json", "UTF-8"));
+const dbDragons = JSON.parse(fs.readFileSync("./db.json"));
 
 const SECRET_KEY = "12132sdqd4sds1s5d";
 const REGEX =
@@ -53,6 +54,8 @@ server.post("/auth/sign", (req, res) => {
         res.status(500).json(error.message);
     }
 });
+
+server.get
 
 server.use(/^(?!\/auth).*$/, (req, res, next) => {
     if (

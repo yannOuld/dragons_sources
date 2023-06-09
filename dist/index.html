@@ -1,65 +1,119 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="w-100">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Dragons</title>
 </head>
 
-<body>
-    <header class="header flex">
-        <p class="header__title">POPDRAGONS</p>
+<body class="w-100">
+    <header class="header flex items-center ">
+        <p class="header__title" tabindex="0">POPDRAGONS</p>
         <div class="header_auth">
             <label for="email">email</label>
             <input type="email" id="email" name="email" />
             <label for="password">mot de passe</label>
             <input type="text" id="password" name="password" />
-            <button class="header__btn">se connecter</button>
+            <button class="header__btn theme-color">se connecter</button>
         </div>
 
     </header>
-    <nav class="navigation flex flex-col">
-        <div class="navigation__layout--search ">
-            <div class="search ">
-                <label for="searchbar" class="search__label">rechercher</label>
+    <nav class="navigation w-100 flex flex-col">
+        <div class="navigation__layout--search flex items-center flex-col ">
+            <div class="search w-100">
+                <label for="searchbar" class="search__label" tabindex="0">rechercher</label>
                 <span class="search__bar--layout">
                     <input type="text" id="searchbar" name="searchbar" class="search__bar" />
-                    <button class="search__btn"></button>
+                    <button class="search__btn theme-color  flex items-center" aria-label="bouton de recherche">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </span>
             </div>
-            <div class="navigation__layout--filters  ">
-                <div class="filters flex">
-                    <p class="filters__label">filtres:</p>
-                    <div class="filters__layout">
-                        <span class="filters__checkbox">
-                            <label for="water">eau</label><input type="checkbox" id="water" name="water" />
-                        </span>
-                        <span class="filters__checkbox">
-                            <label for="fire">feu</label><input type="checkbox" id="fire" name="fire" />
-                        </span>
-                        <span class="filters__checkbox">
-                            <label for="earth">terre</label><input type="checkbox" id="earth" name="earth" />
-                        </span>
-                        <span class="filters__checkbox">
-                            <label for="air">air</label><input type="checkbox" id="air" name="air" />
-                        </span>
-                    </div>
+
+            <div class="filters flex items-center">
+                <p class="filters__label" tabindex="0">filtres:</p>
+                <div class="filters__layout w-100 flex">
+                    <span class="filters__checkbox">
+                        <label for="water">eau</label><input type="checkbox" id="water" name="water" />
+                    </span>
+                    <span class="filters__checkbox">
+                        <label for="fire">feu</label><input type="checkbox" id="fire" name="fire" />
+                    </span>
+                    <span class="filters__checkbox">
+                        <label for="earth">terre</label><input type="checkbox" id="earth" name="earth" />
+                    </span>
+                    <span class="filters__checkbox">
+                        <label for="air">air</label><input type="checkbox" id="air" name="air" />
+                    </span>
                 </div>
             </div>
+
         </div>
     </nav>
 
-    <main id="main" class="container">
-        <section class="flex">
-            <ul id="cards">
+    <main class="container w-100 flex">
+        <section id="container" class="container__content flex flex-col">
+            <h1 id="page__title" class="container__title" tabindex="0"> Les Dragons</h1>
+            <ul id="content" class="cards__content w-100 flex flex-col relations__content">
+                <!--
+                    <li class="flex w-100">
+                        <figure class="card flex flex-col" tabindex="0" aria-label="cartes de dragon">
+                            <img src="./dragons/Alexstrasza.webp" class="card__img w-100"
+                            alt="dragon Alexstrasa de world of warcraft">
+                            <figcaption class="card__infos w-100 flex flex-col">
+                                <h2 class="card__name" tabindex="0">Alexstrasa</h2>
+                                <div class="card__badge card__badge--fire" tabindex="0">type:FEU</div>
+                            <button class="card__btn" aria-label="afficher les relations du dragon">Relations</button>
+                        </figcaption>
+                    </figure>
+                </li>
+               
+            -->
+                <!--
+
+                <li>
+                    <article class="list flex space-betwn items-center"> <img src="./dragons/drogon.webp"
+                        class="list__img" alt="image du dragon">
+                        <h2 class="list__name">Alexstrasa</h2>
+                        <div class="list__type">type: FEU</div>
+                    </article>
+                </li>
+                <li>
+                    <article class="list flex space-betwn items-center"> <img src="./dragons/drogon.webp"
+                        class="list__img" alt="image du dragon">
+                        <h2 class="list__name">Alexstrasa</h2>
+                        <div class="list__type">type: FEU</div>
+                    </article>
+                </li>
+                <li>
+                    <article class="list flex space-betwn items-center"> <img src="./dragons/drogon.webp"
+                            class="list__img" alt="image du dragon">
+                            <h2 class="list__name">Alexstrasa</h2>
+                        <div class="list__type">type: FEU</div>
+                    </article>
+                </li>
+            -->
             </ul>
-            <div class="pagination">
+            <div class="pagination w-100 flex flex-col items-center">
+                <div class="pagination__container">
+                    <button class="pagination__btn--rounded"><i class="fa-solid fa-backward-fast"></i></button>
+                    <button class="pagination__btn--rounded"><i class="fa-solid fa-backward-step"></i></button>
+                    <span id="pagination">
+
+                    </span>
+                    <button class="pagination__btn--rounded"><i class="fa-solid fa-forward-step"></i></button>
+                    <button class="pagination__btn--rounded"><i class="fa-solid fa-forward-fast"></i></button>
+                </div>
+                <p>pages</p>
             </div>
         </section>
-        <form action="submit" class="form">
-            <h2 class="form__title">Créer votre dragon</h2>
+        <form action="submit" tabindex="0" aria-label="formulaire" class="form theme-color">
+            <h2 class="form__title" tabindex="0">Créer votre dragon</h2>
             <div class="form__layout">
 
                 <div class="flex flex-col space-betwn">
@@ -74,8 +128,8 @@
                     </span>
                 </div>
 
-                <div class="form__layout--btn">
-                    <button class="form__btn">Envoyer</button>
+                <div class="form__layout--btn w-100 items-center">
+                    <button class="form__btn theme-color">Envoyer</button>
                 </div>
             </div>
         </form>

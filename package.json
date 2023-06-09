@@ -8,7 +8,7 @@
     "build": "webpack --env NODE_ENV=production --config webpack.config.js",
     "start": "webpack serve",
     "serve": "json-server --watch db.json",
-    "start-auth": "node src/server/server.js"
+    "start-auth": "node server.js"
   },
   "keywords": [],
   "author": "",
