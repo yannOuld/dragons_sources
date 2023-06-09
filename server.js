@@ -2,7 +2,7 @@ const jsonServer = require("json-server");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const dbUsers = JSON.parse(fs.readFileSync("./users.json", "UTF-8"));
-const dbDragons = JSON.parse(fs.readFileSync("./db.json"));
+const cors = require('cors')
 
 const SECRET_KEY = "12132sdqd4sds1s5d";
 const REGEX =
@@ -25,7 +25,8 @@ function authenticate({ email }) {
 // jsonServer and router init
 const server = jsonServer.create();
 const router = jsonServer.router("./db.json");
-
+server.use(jsonServer.bodyParser)
+server.use(cors)
 // routes user authentification
 
 server.post("/auth/sign", (req, res) => {
@@ -55,9 +56,8 @@ server.post("/auth/sign", (req, res) => {
     }
 });
 
-server.get
-
-server.use(/^(?!\/auth).*$/, (req, res, next) => {
+/*
+server.use((req, res, next) => {
     if (
         req.headers.authorization === undefined ||
         req.headers.authorization.split(" ")[0] !== "Bearer"
@@ -77,7 +77,7 @@ server.use(/^(?!\/auth).*$/, (req, res, next) => {
         res.status(401).json(err.message);
     }
 });
-
+*/
 server.use(router);
 
 server.listen(3000, () => {

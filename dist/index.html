@@ -8,18 +8,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./bundle.js" defer></script>
     <title>Dragons</title>
 </head>
 
 <body class="w-100">
     <header class="header flex items-center ">
         <p class="header__title" tabindex="0">POPDRAGONS</p>
-        <div class="header_auth">
-            <label for="email">email</label>
-            <input type="email" id="email" name="email" />
-            <label for="password">mot de passe</label>
-            <input type="text" id="password" name="password" />
-            <button class="header__btn theme-color">se connecter</button>
+        <div class="header_auth flex">
+            <p class="flex" tabindex="0">wubba lubba dub dub</p>
+            <img style="width: 40px; height: 40px; margin: 0 20px; border-radius: 100%;"
+                src="./icon/diseño-de-un-icono-perfil-avatar-línea-simple-para-mostrar-el-usuario-admin-su-proyecto-creativo-178774079.webp"
+                alt="image utilisateur" tabindex="0">
+            <!--
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" />
+                <label for="password">mot de passe</label>
+                <input type="text" id="password" name="password" />
+                <button class="header__btn theme-color">se connecter</button>
+            -->
         </div>
 
     </header>
@@ -59,9 +66,35 @@
     <main class="container w-100 flex">
         <section id="container" class="container__content flex flex-col">
             <h1 id="page__title" class="container__title" tabindex="0"> Les Dragons</h1>
+            <!-- <h1 id="page__title" class="container__title" tabindex="0"> Les relations de Alexstrasza</h1>-->
             <ul id="content" class="cards__content w-100 flex flex-col relations__content">
-                <!--
+                <template id="template">
                     <li class="flex w-100">
+                        <figure class="card flex flex-col" tabindex="0" aria-label="cartes de dragon">
+                            <img src="" class="card__img w-100" alt="dragon">
+                            <figcaption class="card__infos w-100 flex flex-col">
+                                <h2 class="card__name" tabindex="0"></h2>
+                                <div class="card__badge" tabindex="0"></div>
+                                <button class="card__btn"
+                                    aria-label="afficher les relations du dragon">Relations</button>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </template>
+
+                <!-- cartes
+                    <li class="flex w-100">
+                        <figure class="card flex flex-col" tabindex="0" aria-label="cartes de dragon">
+                            <img src="./dragons/Alexstrasza.webp" class="card__img w-100"
+                            alt="dragon Alexstrasa de world of warcraft">
+                            <figcaption class="card__infos w-100 flex flex-col">
+                                <h2 class="card__name" tabindex="0">Alexstrasa</h2>
+                                <div class="card__badge card__badge--fire" tabindex="0">type:FEU</div>
+                            <button class="card__btn" aria-label="afficher les relations du dragon">Relations</button>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="flex w-100">
                         <figure class="card flex flex-col" tabindex="0" aria-label="cartes de dragon">
                             <img src="./dragons/Alexstrasza.webp" class="card__img w-100"
                             alt="dragon Alexstrasa de world of warcraft">
@@ -74,8 +107,7 @@
                 </li>
                
             -->
-                <!--
-
+                <!-- relations
                 <li>
                     <article class="list flex space-betwn items-center"> <img src="./dragons/drogon.webp"
                         class="list__img" alt="image du dragon">
@@ -104,7 +136,7 @@
                     <button class="pagination__btn--rounded"><i class="fa-solid fa-backward-fast"></i></button>
                     <button class="pagination__btn--rounded"><i class="fa-solid fa-backward-step"></i></button>
                     <span id="pagination">
-
+                        <button class="pagination__btn">1</button>
                     </span>
                     <button class="pagination__btn--rounded"><i class="fa-solid fa-forward-step"></i></button>
                     <button class="pagination__btn--rounded"><i class="fa-solid fa-forward-fast"></i></button>

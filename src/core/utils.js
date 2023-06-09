@@ -1,63 +1,29 @@
-export function addDragons(main, dragonsList, button, clean) {
 
-  if (clean === true) {
-    while (main.firstChild) {
-      main.removeChild(main.firstChild)
-    }
+export function cardTemplate(main, dragon) {
+  console.log(dragon)
+  if ("content" in document.createElement("template")) {
+    let template = document.querySelector("#template"),
+      tempclone = document.importNode(template.content, true),
+      img = tempclone.querySelector('.card__img'),
+      name = tempclone.querySelector('.card__name'),
+      badge = tempclone.querySelector('.card__badge');
+    img.src = `./dragons/${dragon.name}.webp`;
+    name.innerHTML = dragon.name;
+    badge.innerHTML = `type:${dragon.type}`;
+    if (dragon.type == 'Feu') badge.classList.add('card__badge--fire');
+    if (dragon.type == 'Eau') badge.classList.add('card__badge--water');
+    if (dragon.type == 'Terre') badge.classList.add('card__badge--Earth');
+    if (dragon.type == 'Air') badge.classList.add('card__badge--air');
+
+    main.appendChild(tempclone)
+  } else {
+    main.innerHTML = 'Désolée un problème est survenu essayer plus tard';
+    throw new Error('don\'t use internet explorer')
   }
-
-  main.appendChild(button);
-  const ul = document.createElement("ul");
-
-  for (const { id, name, average, relations, element } of dragonsList) {
-
-    const li = document.createElement("li");
-    const content = document.createTextNode(name);
-    li.appendChild(content);
-
-    if (average) {
-      let p = document.createElement("p");
-      p.appendChild(document.createTextNode(`Moyenne forces :  ${average}`));
-      li.appendChild(p);
-    }
-
-    if (relations) {
-      let ulR = document.createElement("ul");
-      let liR = null;
-      for (const { name: nameR } of relations) {
-        liR = document.createElement("li");
-        liR.appendChild(document.createTextNode(nameR));
-        ulR.appendChild(liR);
-        li.appendChild(ulR);
-      }
-      li.appendChild(ulR);
-    }
-
-
-    let elmt = document.createTextNode(`element: ${element ? element : 'aucun'}`);
-    li.appendChild(elmt);
-
-
-    ul.appendChild(li);
-  }
-
-  main.appendChild(ul);
 }
 
-export const average = (data) => {
-  if (data.length > 0)
-    return (
-      Math.floor((data.reduce((acc, curr) => acc + curr) / data.length) * 100) /
-      100
-    );
 
-  return null;
-};
-
-export const createButton = (label) => {
-  const button = document.createElement("button");
-  const buttonText = document.createTextNode(label);
-  button.appendChild(buttonText);
-
-  return button;
+export async function fetchDragons() {
+  let dragons = await fetch('http://localhost:3000/dragons').then(response => response.json()).catch(err => console.log(err))
+  return dragons
 }

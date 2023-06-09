@@ -24,6 +24,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "json-server": "^0.17.3",
     "jsonwebtoken": "^9.0.0"
   }
