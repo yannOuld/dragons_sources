@@ -56,7 +56,7 @@ server.post("/auth/sign", (req, res) => {
     }
 });
 
-/*
+
 server.use((req, res, next) => {
     if (
         req.headers.authorization === undefined ||
@@ -77,7 +77,7 @@ server.use((req, res, next) => {
         res.status(401).json(err.message);
     }
 });
-*/
+
 server.use(router);
 
 server.listen(3000, () => {

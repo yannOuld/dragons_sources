@@ -64,10 +64,10 @@
     </nav>
 
     <main class="container w-100 flex">
-        <section id="container" class="container__content flex flex-col">
+        <section class="container__content flex flex-col">
             <h1 id="page__title" class="container__title" tabindex="0"> Les Dragons</h1>
             <!-- <h1 id="page__title" class="container__title" tabindex="0"> Les relations de Alexstrasza</h1>-->
-            <ul id="content" class="cards__content w-100 flex flex-col relations__content">
+            <ul id="container" class="cards__content w-100 flex  relations__content">
                 <template id="template">
                     <li class="flex w-100">
                         <figure class="card flex flex-col" tabindex="0" aria-label="cartes de dragon">
@@ -133,13 +133,17 @@
             </ul>
             <div class="pagination w-100 flex flex-col items-center">
                 <div class="pagination__container">
-                    <button class="pagination__btn--rounded"><i class="fa-solid fa-backward-fast"></i></button>
-                    <button class="pagination__btn--rounded"><i class="fa-solid fa-backward-step"></i></button>
+                    <button class="pagination__btn--rounded" id="first__btn"><i
+                            class="fa-solid fa-backward-fast"></i></button>
+                    <button class="pagination__btn--rounded" id="previous__btn"><i
+                            class="fa-solid fa-backward-step"></i></button>
                     <span id="pagination">
-                        <button class="pagination__btn">1</button>
+
                     </span>
-                    <button class="pagination__btn--rounded"><i class="fa-solid fa-forward-step"></i></button>
-                    <button class="pagination__btn--rounded"><i class="fa-solid fa-forward-fast"></i></button>
+                    <button class="pagination__btn--rounded" id="next__btn"><i
+                            class="fa-solid fa-forward-step"></i></button>
+                    <button class="pagination__btn--rounded" id="last__btn"><i
+                            class="fa-solid fa-forward-fast"></i></button>
                 </div>
                 <p>pages</p>
             </div>
