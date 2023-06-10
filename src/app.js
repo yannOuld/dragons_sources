@@ -1,4 +1,4 @@
-import { fetchDragons, cardTemplate, paginateDragons, createBtn } from "./core/utils";
+import { fetchDragons, cardTemplate, paginateDragons, createBtn, changePage } from "./core/utils";
 
 
 
@@ -10,12 +10,20 @@ document.addEventListener("DOMContentLoaded", async (event) => {
   let current = 1;
   const numberPerPage = 2;
   let numberOfItems = dragons.length;
-  const numberOfPages = Math.ceil(numberOfItems / numberPerPage);
+  const totalPages = Math.ceil(numberOfItems / numberPerPage);
 
 
   let arr = paginateDragons(dragons, current, numberPerPage);
-  createBtn(current, numberOfPages)
+  createBtn(current, totalPages)
   for (let dragon of arr) cardTemplate(main, dragon)
+
+  document.querySelectorAll('pagination__btn').forEach(item => {
+    item.addEventListener('click', (e) => {
+      let page = e.target.value;
+      console.log(page)
+      return changePage(page, totalPages)
+    })
+  })
 
 
 });

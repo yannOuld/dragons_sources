@@ -36,9 +36,11 @@ export function paginateDragons(dragons, current, numberPerPage) {
   return dragons.slice(start, end)
 }
 
-// create pagination buttons
-export function createBtn(current) {
-  let pagination = document.querySelector('#pagination');
+// create pagination buttons and values
+export function createBtn(current, totalPages) {
+  let pagination = document.querySelector('#pagination'),
+    first_btn = document.querySelector('#first__btn'),
+    last_btn = document.querySelector('#last__btn');
 
   for (let i = 0; i < 3; i++) {
     let btn = document.createElement('button')
@@ -46,25 +48,54 @@ export function createBtn(current) {
     btn.value = current + i;
     btn.classList.add('pagination__btn');
     pagination.appendChild(btn);
+  }
 
+  first_btn.value = 1;
+  last_btn.value = totalPages;
+}
+
+export function changePage(page, totalPages) {
+  let prev_btn = document.querySelector('#previous__btn'),
+    next_btn = document.querySelector('#next__btn');
+
+  if (page < 1) page = 1;
+  if (page > totalPages) page = totalPages;
+
+  if (page == 1) {
+    prev_btn.disabled = "true";
+  } else {
+    prev_btn.disabled = "false";
+  }
+
+  if (page == totalPages) {
+    next_btn.disabled = "true";
+  } else {
+    next_btn.disabled = "false";
+  }
+  return page;
+
+}
+
+export function firstPage(current) {
+  current = 1;
+  changePage(current)
+}
+
+export function nextPage(current, totalPages) {
+  if (current < totalPages) {
+    current++;
+    changePage(current);
   }
 }
-export function changePage() {
 
+export function previousPage(current) {
+  if (current > 1) {
+    current--;
+    changePage(current);
+  }
 }
 
-export function firstPage() {
-
-}
-
-export function nextPage() {
-
-}
-
-export function previousPage() {
-
-}
-
-export function lastPage() {
-
+export function lastPage(current, totalPages) {
+  current = totalPages;
+  changePage(current);
 }
