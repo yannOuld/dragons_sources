@@ -1,10 +1,11 @@
 
-
+// fetching dragons data
 export async function fetchDragons() {
   let dragons = await fetch('http://localhost:3000/dragons').then(response => response.json()).catch(err => console.log(err))
   return dragons
 }
 
+// dynamic html injection with template
 export function cardTemplate(main, dragon) {
   if ("content" in document.createElement("template")) {
     let template = document.querySelector("#template"),
@@ -27,26 +28,43 @@ export function cardTemplate(main, dragon) {
   }
 }
 
-export function showDragons(dragons, current) {
-  let pagination = document.querySelector('#pagination');
-  let numberOfItems = dragons.length;
-  let currentPage = 1;
-  const numberPerPage = 2;
-  const numberOfPages = Math.ceil(numberOfItems / numberPerPage)
-  for (let i = -1; i < numberOfPages; i++) {
-    pagination.innerHTLM = `<button class="pagination__btn" value=" ${i + 1} "> ${i + 1} </button>`
-  }
-
+// slice array and paginate the dragons 
+export function paginateDragons(dragons, current, numberPerPage) {
   const start = (current - 1) * numberPerPage;
   const end = start + numberPerPage
 
-
   return dragons.slice(start, end)
+}
 
+// create pagination buttons
+export function createBtn(current) {
+  let pagination = document.querySelector('#pagination');
+
+  for (let i = 0; i < 3; i++) {
+    let btn = document.createElement('button')
+    btn.innerHTML = i + 1;
+    btn.value = current + i;
+    btn.classList.add('pagination__btn');
+    pagination.appendChild(btn);
+
+  }
+}
+export function changePage() {
 
 }
 
+export function firstPage() {
 
-function createBtn() {
+}
+
+export function nextPage() {
+
+}
+
+export function previousPage() {
+
+}
+
+export function lastPage() {
 
 }
